@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 32px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 15px;
+}
+
+select, input {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+select:hover, input:hover {
+    border-color: #667eea;
+}
+
+button {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #ccc;
+}
+
+/* ============================================
+   RESULTADO - VERSIÓN MEJORADA Y MÁS GRANDE
+   ============================================ */
+
+.resultado-box {
+    margin-top: 25px;
+    padding: 25px 30px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 6px solid #667eea;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    max-height: 700px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.resultado-box.visible {
+    display: block;
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Títulos dentro del reporte */
+.resultado-box .titulo-principal {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #667eea;
+    margin-bottom: 15px;
+}
+
+.resultado-box .titulo-secundario {
+    font-size: 18px;
+    font-weight: 700;
+    color: #34495e;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    background: #e9ecef;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+/* Líneas separadoras */
+.resultado-box .linea-separadora {
+    border: none;
+    border-top: 2px dashed #dee2e6;
+    margin: 12px 0;
+}
+
+/* Ítems de datos */
+.resultado-box .dato {
+    padding: 4px 0;
+}
+
+.resultado-box .dato strong {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.resultado-box .dato .valor {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Estados - Éxito */
+.resultado-box .estado-exito {
+    font-size: 20px;
+    font-weight: 700;
+    color: #28a745;
+    padding: 12px 16px;
+    background: #d4edda;
+    border-radius: 8px;
+    border-left: 5px solid #28a745;
+    margin: 10px 0;
+}
+
+/* Estados - Error */
+.resultado-box .estado-error {
+    font-size: 20px;
+    font-weight: 700;
+    color: #dc3545;
+    padding: 12px 16px;
+    background: #f8d7da;
+    border-radius: 8px;
+    border-left: 5px solid #dc3545;
+    margin: 10px 0;
+}
+
+/* Notas informativas */
+.resultado-box .nota-info {
+    background: #d1ecf1;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #17a2b8;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.resultado-box .nota-alerta {
+    background: #fff3cd;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #ffc107;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+/* Subrayado para números importantes */
+.resultado-box .numero-destacado {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0066cc;
+    background: #e3f2fd;
+    padding: 2px 10px;
+    border-radius: 4px;
+}
+
+/* Tarimas con formato especial */
+.resultado-box .tarima-info {
+    background: #e8f5e9;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border-left: 4px solid #4caf50;
+    margin: 6px 0;
+}
+
+.grupo-campos {
+    background: #f8f9fa;
+    padding: 18px 20px;
+    border-radius: 8px;
+    margin: 12px 0;
+    border: 1px solid #e9ecef;
+}
+
+.info-ayuda {
+    font-size: 13px;
+    color: #6c757d;
+    margin-top: -8px;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+/* Scroll personalizado para el resultado */
+.resultado-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.resultado-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.resultado-box::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+.resultado-box::-webkit-scrollbar-thumb:hover {
+    background: #5a67d8;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    button {
+        font-size: 17px;
+        padding: 15px;
+    }
+    .resultado-box {
+        font-size: 14px;
+        padding: 18px 20px;
+    }
+    .resultado-box .titulo-principal {
+        font-size: 19px;
+    }
+    .resultado-box .estado-exito,
+    .resultado-box .estado-error {
+        font-size: 17px;
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Producción Kyma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏭 Control de Planta</h1>
+        
+        <label for="producto">Selecciona un producto:</label>
+        <select id="producto" onchange="actualizarFormulario()">
+            <option value="">-- Selecciona --</option>
+            <option value="cascaron">Papel Cascarón</option>
+            <option value="opalina">Opalina</option>
+            <option value="cajas">Cajas de Archivo</option>
+        </select>
+
+        <div id="formulario-dinamico"></div>
+        
+        <button onclick="procesarCalculo()" id="btnCalcular" disabled>Calcular</button>
+
+        <div id="resultado" class="resultado-box"></div>
+    </div>
+    <script src="codigo.js"></script>
+</body>
+</html>
